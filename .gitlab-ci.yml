@@ -2,9 +2,9 @@ stages:
     - build
     - build-image
 variables:
-  APP_NAME: python-flask-demo
-  DOCKER_HOST: tcp://docker:2375
-
+    APP_NAME: python-flask-demo
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: "/certs"
 build:
     image: alpine
     stage: build
