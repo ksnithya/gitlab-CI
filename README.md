@@ -19,3 +19,4 @@ If we we run above pipeline we will get docker host not found/ is docker deamon 
 --------------------------------------------------
 Still we get hostnot found error add below line
         - unset DOCKER_HOST
+
