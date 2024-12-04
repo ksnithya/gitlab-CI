@@ -1,22 +1,10 @@
 stages:
-    - build
     - build-image
 variables:
     APP_NAME: "python-flask-demo"
     DOCKER_HOST: "tcp://docker:2375"
     DOCKER_TLS_CERTDIR: "/certs"
     DOCKER_DRIVER: overlay2
-build:
-    image: alpine
-    stage: build
-    script:
-        - echo "Hello Docker" > index.html
-    artifacts:
-        paths:
-            - index.html
-
-
-
 build-docker-image:
     stage: build-image
     image: 
