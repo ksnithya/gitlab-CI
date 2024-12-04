@@ -27,8 +27,8 @@ build-docker-image:
         - amazon-linux-extras install docker
         - aws --version
         - docker --version
-        - systemctl start docker
-        - systemctl status docker
+        - sudo systemctl start docker
+        - sudo systemctl status docker
     script:
         - unset DOCKER_HOST
         - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID . 
