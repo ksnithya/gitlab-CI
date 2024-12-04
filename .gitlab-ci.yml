@@ -3,7 +3,7 @@ stages:
     - build-image
 variables:
     APP_NAME: "python-flask-demo"
-    DOCKER_HOST: "tcp://docker:2376"
+    DOCKER_HOST: "tcp://docker:2375"
     DOCKER_TLS_CERTDIR: "/certs"
 build:
     image: alpine
@@ -27,6 +27,8 @@ build-docker-image:
         - amazon-linux-extras install docker
         - aws --version
         - docker --version
+        - systemctl start docker
+        - systemctl status docker
     script:
         - unset DOCKER_HOST
         - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID . 
